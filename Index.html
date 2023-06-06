@@ -7,13 +7,18 @@
   </head>
   <body>
     <h1>Todo List App</h1>
+    <div id="main-div">
     <div id="container">
-      <input placeholder="Add a task" class="add-task" id="add" data-helloWord="asdasdas"/>
-      <span id="total-tasks">Total tasks: <span id="tasks-counter">0</span></span>
+      <input placeholder="Type Your To Do Task" class="add-task" id="add" data-helloWord="asdasdas"/>
+      <div id="flex1"><div id="complete-all-tasks"><a class="complete-all-tasks" href="#">Complete All Tasks</a></div><div class="clear-completed"><a class="clear-completed" href="#">Clear Completed</a></div></div>
+      <hr>
       <ul id="list">
           <!-- https://as2.ftcdn.net/v2/jpg/05/97/05/57/1000_F_597055787_siTxQzhttxlWdbdww9KvSahhvLWXinIb.jpg -->
       </ul>
-    </div>
+      <hr>
+      <div id="total-tasks"><div>Total tasks: <span id="tasks-counter">0</span></div> <div><span id="textt" class="all">All</span><span id="textt" class="uncomplete">Uncomplete</span><span id="textt" class="completed">Completed</span></div></div>
+   </div>
+  </div>
     <script src="todo.js"></script>
   </body>
 </html>
