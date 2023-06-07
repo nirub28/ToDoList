@@ -1,10 +1,12 @@
-let tasks = [];
-let uncomplete=[];
-let completed=[];
+let tasks = [];  // to store all tasks
+let uncomplete=[]; // to store uncompleted tasks
+let completed=[];  // to store completed tasks
 const taskList = document.getElementById("list");
 const addTaskInput = document.getElementById("add");
 const tasksCounter = document.getElementById("tasks-counter");
 
+
+//to create an li
 function addTasksToList(task) {
   const li = document.createElement("li");
 
@@ -29,6 +31,8 @@ function renderList() {
   tasksCounter.innerHTML = tasks.length;
 }
 
+
+//to render uncompleted tasks
 function renderList1(uncomplete) {
   taskList.innerHTML = "";
 
@@ -37,6 +41,7 @@ function renderList1(uncomplete) {
   }
 }
 
+//to render completed tasks
 function renderList2(completed) {
   taskList.innerHTML = "";
 
@@ -45,6 +50,7 @@ function renderList2(completed) {
   }
 }
 
+//to mark task as completed 
 function markTaskAsComplete(taskId) {
   const task = tasks.filter((task) => {
     return task.id == taskId;
@@ -57,6 +63,8 @@ function markTaskAsComplete(taskId) {
     return;
   }
 }
+
+//to mark all tasks as completed 
 function markAllTaskAsComplete(tasks){
      for( let i=0;i<tasks.length;i++){
         const task = tasks[i];
@@ -66,15 +74,18 @@ function markAllTaskAsComplete(tasks){
      return;
 }
 
+
+// delete a task
 function deleteTask(taskId) {
   const newTasks = tasks.filter((task) => {
     return task.id !== taskId; // it will remove the task with taskId matches from array
   });
 
-  tasks = newTasks; // as we render tasks array, we need latest array after delting task
+  tasks = newTasks; // as we render tasks array, we need latest array after deleting task
   renderList();
 }
 
+// delete all completed tasks
 function deleteCompleted(){
   const completedTask = tasks.filter((task) => {
     return task.done === false; 
@@ -84,6 +95,8 @@ function deleteCompleted(){
   renderList();
 }
 
+
+// to show uncomplted tasks
 function showUncompleted(tasks){
   const uncompltedTasks = tasks.filter((task) => {
     return task.done === false; 
@@ -93,6 +106,8 @@ function showUncompleted(tasks){
   renderList1(uncomplete);
 }
 
+
+//to show complted tasks
 function showCompleted(tasks){
   const CompletedTasks = tasks.filter((task) => {
     return task.done === true; 
@@ -102,6 +117,7 @@ function showCompleted(tasks){
   renderList2(completed);
 }
 
+//to add task
 function addTask(task) {
   if (task) {
     tasks.push(task);
@@ -110,6 +126,7 @@ function addTask(task) {
   }
 }
 
+// to show notification when try to add empty task
 function showNotification(text) {
   alert(text);
 }
