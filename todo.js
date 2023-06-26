@@ -6,7 +6,7 @@ const addTaskInput = document.getElementById("add");
 const tasksCounter = document.getElementById("tasks-counter");
 
 
-//to create an li
+//to create an li tag
 function addTasksToList(task) {
   const li = document.createElement("li");
 
